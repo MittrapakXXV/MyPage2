@@ -1,0 +1,362 @@
+@font-face {font-family: DMC; src: url('DMC5Font.otf')}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: DMC;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 5px 0px 5px rgb(225, 0, 0),
+    -5px 0px 5px rgb(0, 206, 225),
+    -5px 0px 50px rgb(0, 206, 225),
+    5px 0px 50px rgb(225, 0, 0);
+    height: 30px;
+}
+
+#headline {
+    text-align: center;
+    font-family: DMC;
+    font-size: 30px;
+    height: 10px;
+    margin-bottom: 40px;
+    text-shadow: 5px 0px 5px rgb(199, 0, 225),
+    -5px 0px 5px rgb(153, 0, 167),
+    0px 5px 5px rgb(85, 1, 106),
+    0px 5px 5px rgb(170, 0, 204);
+}
+
+
+
+
+.profileImg {
+  border-radius: 50%;
+}
+
+
+
+.h1Text {
+    width: 200px;
+    text-align: center;
+    font-family: DMC;
+     text-shadow:
+    0px 0px 20px black;
+    font-size: 30px;
+    background-image: linear-gradient(to right,black,cyan);
+    color: aliceblue;
+
+    border-color: linear-gradient(to right,black,cyan);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-style: groove;
+}
+.h2Text {
+    width: 100px;
+    text-align: center;
+    font-family: DMC;
+     text-shadow:
+    0px 0px 20px black;
+
+
+    background-image: linear-gradient(to right,black,cyan);
+    color: aliceblue;
+
+    border-color: linear-gradient(to right,black,cyan);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-style: groove;
+}
+
+
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 75px;
+  --card-width: 100px;
+}
+
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, black,rgb(0, 38, 152));
+}
+
+
+#body2 {
+background-image: linear-gradient(to bottom,rgba(94, 94, 94, 0.454),rgba(39, 39, 39, 0.493));
+padding-left: 20px; 
+border-radius: 10px; 
+border-style: groove;
+padding-bottom: 20px;
+}
+
+.card {
+  background: #191c29a9;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: DMC;
+  
+}
+
+.card::before {
+  content: "";
+  width: 102%;
+  height: 104%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #8900af 43%, #ff0000);
+    position: absolute;
+    z-index: -1;
+    top: -2%;
+    left: -1%;
+    animation: spin 1.5s linear infinite;
+}
+
+
+
+
+
+
+.contactcard {
+  background: #1b1c21;
+  width: 70%;
+  height: 100%;
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: DMC;
+  align-items: center;
+  left: 15%;
+}
+
+
+
+.contactcard::before {
+  content: "";
+  width: 104%;
+  height: 106%;
+  border-radius: 8px;
+  align-items: center;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #8900af 43%, #ff0000);
+    position: absolute;
+    z-index: -1;
+    top: -2%;
+    left: -2%;
+    animation: spin 1.5s linear infinite;
+}
+
+
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  25% {
+    --rotate: 45deg;
+  }
+  50% {
+    --rotate: 180deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+#myCanvas{
+    position: fixed;
+    inset: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;         
+    background: transparent;
+    display: block;
+  }
+
+
+a {
+  color: #009dff;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: transparent;
+
+  font-size: var(--positione);
+  transition: 0.5s;
+  background: linear-gradient(var(--rotate), #00f5cc, #0003c4, #6100e0, #00ffc3);
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: spin 3s linear infinite, shake 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+
+.tooltip:hover {
+  background-color: transparent;
+
+  font-size: var(--positione);
+  transition: 0.5s;
+  background: linear-gradient(var(--rotate), #00f5cc, #0003c4, #6100e0, #00ffc3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: spin 3s linear infinite, shake 0.2s ease-in-out;
+}
+
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background: #000000;
+  color: #ffffff;
+  padding: 5px 0;
+  border : 10px solid;
+
+  position: absolute;
+  z-index: 1;
+
+    border-image: linear-gradient(
+    var(--rotate)
+    , #ffef5d, #00c30a ,rgb(0, 235, 247)) 1;
+    border-width: 5px;
+    border-radius: 5px;
+    position: absolute;
+    animation: spin 1.5s linear infinite;
+  opacity: 0;
+  transition: opacity 1s ;
+}
+
+
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+@property --grad {
+  syntax: "<color>";
+  initial-value: rgba(10, 10, 10,10);
+  inherits: false;
+}
+
+@property --grad2 {
+  syntax: "<color>";
+  initial-value: rgba(100, 100, 100, 5);
+  inherits: false;
+}
+
+
+.linkButton {
+  background-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0),rgba(55, 0, 205, 0));
+}
+.linkButton:has(a:hover) {
+    background-image: linear-gradient(to right, var(--grad),var(--grad2),rgba(55, 0, 205, 0),rgba(55, 0, 205, 0));
+  border-radius: 5px;
+  animation: reveal 0.3s ease-out;
+}
+
+
+
+@keyframes reveal {
+  0% {
+    --grad: rgba(0, 203, 225, 0);
+    --grad2: rgba(23, 0, 122, 0)
+  }
+  100% {
+    --grad: rgba(10, 10, 10,10);
+    --grad2: rgba(100, 100, 100, 5)
+  }
+
+}
+
+
+
+@keyframes shake {
+  0% {
+    font-size: 30px;
+  }
+  25% {
+    font-size: 28px;
+  }
+  50% {
+    font-size: 31px;
+  }
+  75% {
+    font-size: 29px;
+  }
+  100% {
+    font-size: 30px;
+  }
+
+}
+
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-image: radial-gradient(rgb(83, 83, 83),rgba(255, 255, 255, 0.247),rgba(255, 255, 255, 0.012));
+  padding: 20px;
+} 
